@@ -201,7 +201,7 @@ CorLevelPlot <- function(
         aspect = "fill",
         col.regions = cols,
         cuts = 100,
-        at = seq(iLowerRange, iUpperRange, 0.01),
+        at = sapply(seq(iLowerRange, iUpperRange, 0.01), unicode_minus),
         main = list(label = main,
             cex = cexMain,
             rot = rotMain,
