@@ -129,6 +129,7 @@ CorLevelPlot <- function(
             na = FALSE,
             cutpoints = signifCutpoints,
             symbols = signifSymbols))
+        signif[,i] <- unicode_minus(signif[,i])
     }
 
     #Create a new df with same dimensions as corvals
@@ -136,9 +137,10 @@ CorLevelPlot <- function(
     plotLabels <- corvals
     for (i in 1:nrow(corvals)) {
         for(j in 1:ncol(corvals)) {
-            plotLabels[i,j] <- paste(round(corvals[i,j],2),
+            label <- paste(round(corvals[i,j],2),
                 signif[i,j],
                 sep="")
+            plotLabels[i,j] <- unicode_minus(label)
             colnames(plotLabels)[j] <- colnames(corvals)[j]
         }
 
