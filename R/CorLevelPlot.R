@@ -172,6 +172,10 @@ CorLevelPlot <- function(
             font = fontCorval)
     }
 
+    # transform labels and legend ticks
+    legend_ticks <- seq(iLowerRange, iUpperRange, 0.01)
+    unicode_legend_labels <- sapply(legend_ticks, unicode_minus)
+
     lattice::levelplot(
         data.matrix(corvals),
         xlab = list(label = titleX,
@@ -201,13 +205,17 @@ CorLevelPlot <- function(
         aspect = "fill",
         col.regions = cols,
         cuts = 100,
-        at = sapply(seq(iLowerRange, iUpperRange, 0.01), unicode_minus),
+        at = seq(iLowerRange, iUpperRange, 0.01),
         main = list(label = main,
             cex = cexMain,
             rot = rotMain,
             col = colMain,
             font = fontMain),
         colorkey = list(space = posColKey,
-            labels = list(cex = cexLabColKey)))
+                        at = legend_ticks,
+                        labels = list(
+                            labels = unicode_legend_labels,  # use transformed Unicode labels
+                            cex = cexLabColKey
+                        ))
 }
 
