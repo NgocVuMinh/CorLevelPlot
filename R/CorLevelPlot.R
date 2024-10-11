@@ -70,6 +70,10 @@ CorLevelPlot <- function(
     yvals <- data.matrix(data[,which(colnames(data) %in% y)])
     corvals <- stats::cor(xvals, yvals, use = corUSE, method = corFUN)
 
+    unicode_minus <- function(x) {
+        sub('^-', '\U2212', format(x))
+    }
+
     #Create a new df with same dimensions as corvals and fill with P values
     pvals <- corvals
     for (i in 1:ncol(xvals)) {
