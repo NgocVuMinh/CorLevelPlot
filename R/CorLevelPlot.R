@@ -173,7 +173,7 @@ CorLevelPlot <- function(
     }
 
     # transform labels and legend ticks
-    legend_ticks <- seq(iLowerRange, iUpperRange, 0.01)
+    legend_ticks <- seq(iLowerRange, iUpperRange, 0.5)
     unicode_legend_labels <- sapply(legend_ticks, unicode_minus)
 
     lattice::levelplot(
@@ -205,7 +205,7 @@ CorLevelPlot <- function(
         aspect = "fill",
         col.regions = cols,
         cuts = 100,
-        at = seq(iLowerRange, iUpperRange, 0.01),
+        at = seq(iLowerRange, iUpperRange, 0.5),
         main = list(label = main,
             cex = cexMain,
             rot = rotMain,
