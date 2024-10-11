@@ -216,6 +216,6 @@ CorLevelPlot <- function(
                         labels = list(
                             labels = unicode_legend_labels,  # use transformed Unicode labels
                             cex = cexLabColKey
-                        ))
-
+                        )))
+}
 
