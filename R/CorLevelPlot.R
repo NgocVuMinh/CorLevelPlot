@@ -166,7 +166,7 @@ CorLevelPlot <- function(
     labels <- function(x, y, z, ...) {
         lattice::panel.levelplot(x, y, z, ...)
         lattice::ltext(x, y,
-            labels = plotLabels,
+            labels = apply(plotLabels, c(1, 2), unicode_minus),
             cex = cexCorval,
             col = colCorval,
             font = fontCorval)
