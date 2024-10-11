@@ -212,8 +212,9 @@ CorLevelPlot <- function(
             col = colMain,
             font = fontMain),
         colorkey = list(space = posColKey,
-                        at = legend_ticks,
+                        #at = legend_ticks,
                         labels = list(
+                            at = legend_ticks,
                             labels = unicode_legend_labels,  # use transformed Unicode labels
                             cex = cexLabColKey
                         )))
