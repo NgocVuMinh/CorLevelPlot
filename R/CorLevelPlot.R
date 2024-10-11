@@ -82,7 +82,7 @@ CorLevelPlot <- function(
                 yvals[,j],
                 use = corUSE,
                 method = corFUN)$p.value
-            pvals[i,j] <- as.numeric(unicode_minus(format(pval[i,j], digits = 2)))
+            pvals[i,j] <- as.numeric(unicode_minus(format(pvals[i,j], digits = 2)))
             colnames(pvals)[j] <- colnames(yvals)[j]
         }
 
